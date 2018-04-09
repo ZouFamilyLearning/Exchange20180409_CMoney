@@ -10,17 +10,15 @@ namespace Homework0409
     {
         static void Main(string[] args)
         {
-            //CCalculator calculator = new CCalculator();
-            int[] Change = new int[3];
+            // Reference 參考 ------> // Instance/Object/Value 實例/物件/實值
+            CCalculator calculator = new CCalculator(Get1(), Get5(), Get10());
+
             bool haha = true;
             int amount = 0, input;
 
-            int coin1 = Get1();
-            int coin5 = Get5();
-            int coin10 = Get10();
-
             do
             {
+                Console.WriteLine("--------------------------------------------------------");
                 Console.Write("換零錢 1)是 2)否? ");
                 int x = int.Parse(Console.ReadLine());
                 if (x == 2)
@@ -30,7 +28,7 @@ namespace Homework0409
                 }
                 do
                 {
-                    Console.Write("請投入現金： 1) 50元 2) 100元 3) 500元4) 1000元 5)結束 -1)取消: ");
+                    Console.Write("請投入現金： 1) 50元 2) 100元 3) 500元 4) 1000元 5)結束 -1)取消: ");
                     input = int.Parse(Console.ReadLine());
                     switch (input)
                     {
@@ -54,27 +52,14 @@ namespace Homework0409
                 if (input == 5)
                 {
                     Console.WriteLine($"兌換{amount}元");
-                    exchange(amount, Change, coin10, coin5, coin1);
-                    if (Change[0] != 0)
-                    {
-                        Console.Write($"退回10元硬幣{Change[0]}個");
-                    }
-                    if (Change[1] != 0)
-                    {
-                        Console.Write($"，5元硬幣{Change[1]}個");
-                    }
-                    if (Change[2] != 0)
-                    {
-                        Console.Write($"，1元硬幣{Change[2]}個");
-                    }
+
+                    int[] Change = calculator.change(amount);
+                    calculator.printOut(Change);
                     if (Change[0] == 0 && Change[1] == 0 && Change[2] == 0)
                     {
                         end(haha);
                         break;
                     }
-                    Console.WriteLine();
-                    Console.WriteLine("---------------------------------------------------------------------------------");
-
                 }
                 if (input == -1)
                 {
@@ -92,48 +77,6 @@ namespace Homework0409
             haha = false;
         }
 
-        public static int[] exchange(int amount, int[] Change, int coin10, int coin5, int coin1)
-        {
-            int i = amount / 10;
-            if (i <= coin10)
-            {
-                Change[0] = i;
-                // Console.WriteLine($"退回10元硬幣{i}個");
-            }
-            else
-            {
-                int j = 0;
-                j = i - coin10;
-                j *= 2;
-
-                if (j <= coin5)
-                {
-                    Change[0] = coin10;
-                    Change[1] = j;
-                    //Console.WriteLine($"退回10元硬幣5個，5元硬幣{j}個");
-                }
-                else
-                {
-                    int k = 0;
-                    k = j - coin5;
-                    k *= 10;
-                    if (k <= coin1)
-                    {
-                        Change[0] = coin10;
-                        Change[1] = coin5;
-                        Change[2] = k;
-                        // Console.WriteLine($"退回10元硬幣5個，5元硬幣30個，1元硬幣{k}個");
-                    }
-                    else
-                    {
-                        Console.WriteLine("現金不足，無法找零");
-
-                    }
-                }
-            }
-            return Change;
-        }
-
         static public int Get1()
         {
             Console.Write("1元硬幣個數：");
@@ -144,14 +87,12 @@ namespace Homework0409
         {
             Console.Write("5元硬幣個數：");
             return int.Parse(Console.ReadLine());
-
         }
 
         static public int Get10()
         {
             Console.Write("10元硬幣個數：");
             return int.Parse(Console.ReadLine());
-
         }
     }
 }

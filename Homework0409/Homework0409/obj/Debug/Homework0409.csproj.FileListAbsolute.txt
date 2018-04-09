@@ -5,3 +5,10 @@ c:\users\asus\source\repos\Homework0409\Homework0409\obj\Debug\Homework0409.cspr
 c:\users\asus\source\repos\Homework0409\Homework0409\obj\Debug\Homework0409.csproj.CoreCompileInputs.cache
 c:\users\asus\source\repos\Homework0409\Homework0409\obj\Debug\Homework0409.exe
 c:\users\asus\source\repos\Homework0409\Homework0409\obj\Debug\Homework0409.pdb
+C:\Users\ericm\Desktop\IDALearning\Exchange20180409_CMoney\Homework0409\Homework0409\bin\Debug\Homework0409.exe.config
+C:\Users\ericm\Desktop\IDALearning\Exchange20180409_CMoney\Homework0409\Homework0409\bin\Debug\Homework0409.exe
+C:\Users\ericm\Desktop\IDALearning\Exchange20180409_CMoney\Homework0409\Homework0409\bin\Debug\Homework0409.pdb
+C:\Users\ericm\Desktop\IDALearning\Exchange20180409_CMoney\Homework0409\Homework0409\obj\Debug\Homework0409.csprojResolveAssemblyReference.cache
+C:\Users\ericm\Desktop\IDALearning\Exchange20180409_CMoney\Homework0409\Homework0409\obj\Debug\Homework0409.csproj.CoreCompileInputs.cache
+C:\Users\ericm\Desktop\IDALearning\Exchange20180409_CMoney\Homework0409\Homework0409\obj\Debug\Homework0409.exe
+C:\Users\ericm\Desktop\IDALearning\Exchange20180409_CMoney\Homework0409\Homework0409\obj\Debug\Homework0409.pdb

@@ -14,9 +14,11 @@ namespace Homework0409
             int[] Change = new int[3];
             bool haha = true;
             int amount = 0, input;
-            Get1();
-            Get5();
-            Get10();
+
+            int coin1 = Get1();
+            int coin5 = Get5();
+            int coin10 = Get10();
+
             do
             {
                 Console.Write("換零錢 1)是 2)否? ");
@@ -52,9 +54,25 @@ namespace Homework0409
                 if (input == 5)
                 {
                     Console.WriteLine($"兌換{amount}元");
-                    exchange(amount, Change);
-
-                    Console.WriteLine($"退回10元硬幣{Change[0]}個，5元硬幣{Change[1]}個，1元硬幣{Change[2]}個");
+                    exchange(amount, Change, coin10, coin5, coin1);
+                    if (Change[0] != 0)
+                    {
+                        Console.Write($"退回10元硬幣{Change[0]}個");
+                    }
+                    if (Change[1] != 0)
+                    {
+                        Console.Write($"，5元硬幣{Change[1]}個");
+                    }
+                    if (Change[2] != 0)
+                    {
+                        Console.Write($"，1元硬幣{Change[2]}個");
+                    }
+                    if (Change[0] == 0 && Change[1] == 0 && Change[2] == 0)
+                    {
+                        end(haha);
+                        break;
+                    }
+                    Console.WriteLine();
                     Console.WriteLine("---------------------------------------------------------------------------------");
 
                 }
@@ -74,10 +92,10 @@ namespace Homework0409
             haha = false;
         }
 
-        public static int[] exchange(int amount, int[] Change)
+        public static int[] exchange(int amount, int[] Change, int coin10, int coin5, int coin1)
         {
             int i = amount / 10;
-            if (i <= 5)
+            if (i <= coin10)
             {
                 Change[0] = i;
                 // Console.WriteLine($"退回10元硬幣{i}個");
@@ -85,51 +103,55 @@ namespace Homework0409
             else
             {
                 int j = 0;
-                j = i - 5;
+                j = i - coin10;
                 j *= 2;
-                if (j <= 30)
+
+                if (j <= coin5)
                 {
-                    Change[0] = 5;
+                    Change[0] = coin10;
                     Change[1] = j;
                     //Console.WriteLine($"退回10元硬幣5個，5元硬幣{j}個");
                 }
                 else
                 {
                     int k = 0;
-                    k = i - 20;
+                    k = j - coin5;
                     k *= 10;
-                    if (k <= 30)
+                    if (k <= coin1)
                     {
-                        Change[0] = 5;
-                        Change[1] = 30;
+                        Change[0] = coin10;
+                        Change[1] = coin5;
                         Change[2] = k;
                         // Console.WriteLine($"退回10元硬幣5個，5元硬幣30個，1元硬幣{k}個");
                     }
                     else
                     {
                         Console.WriteLine("現金不足，無法找零");
+
                     }
                 }
             }
             return Change;
         }
 
-        static public string Get1()
+        static public int Get1()
         {
             Console.Write("1元硬幣個數：");
-            return Console.ReadLine();
+            return int.Parse(Console.ReadLine());
         }
 
-        static public string Get5()
+        static public int Get5()
         {
             Console.Write("5元硬幣個數：");
-            return Console.ReadLine();
+            return int.Parse(Console.ReadLine());
+
         }
 
-        static public string Get10()
+        static public int Get10()
         {
             Console.Write("10元硬幣個數：");
-            return Console.ReadLine();
+            return int.Parse(Console.ReadLine());
+
         }
     }
 }

@@ -1,0 +1,7 @@
+c:\users\asus\source\repos\Homework0409\Homework0409\bin\Debug\Homework0409.exe.config
+c:\users\asus\source\repos\Homework0409\Homework0409\bin\Debug\Homework0409.exe
+c:\users\asus\source\repos\Homework0409\Homework0409\bin\Debug\Homework0409.pdb
+c:\users\asus\source\repos\Homework0409\Homework0409\obj\Debug\Homework0409.csprojResolveAssemblyReference.cache
+c:\users\asus\source\repos\Homework0409\Homework0409\obj\Debug\Homework0409.csproj.CoreCompileInputs.cache
+c:\users\asus\source\repos\Homework0409\Homework0409\obj\Debug\Homework0409.exe
+c:\users\asus\source\repos\Homework0409\Homework0409\obj\Debug\Homework0409.pdb
